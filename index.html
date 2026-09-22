@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JARVIS</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- HEADER -->
+        <header>
+            <div>
+                <h1>JARVIS</h1>
+                <p>Your Personal Assistant</p>
+            </div>
+
+            <div class="status">
+                ● ONLINE
+            </div>
+        </header>
+
+
+        <!-- DASHBOARD -->
+
+        <section class="dashboard">
+
+            <div class="card">
+                <h2>📅 Calendar</h2>
+
+                <div id="calendarEvents">
+                    <p>No events yet.</p>
+                </div>
+
+                <button onclick="addEvent()">+ Add Event</button>
+            </div>
+
+
+            <div class="card">
+                <h2>💰 Money</h2>
+
+                <div class="money">
+                    <p>Monthly Budget</p>
+                    <h3 id="budget">$0</h3>
+                </div>
+
+                <div class="money">
+                    <p>Spent</p>
+                    <h3 id="spent">$0</h3>
+                </div>
+
+                <button onclick="addExpense()">+ Add Expense</button>
+            </div>
+
+
+            <div class="card">
+                <h2>✅ Tasks</h2>
+
+                <div id="tasks">
+                    <p>No tasks yet.</p>
+                </div>
+
+                <button onclick="addTask()">+ Add Task</button>
+            </div>
+
+        </section>
+
+
+        <!-- JARVIS CHAT -->
+
+        <section class="chat">
+
+            <div class="chatHeader">
+                <h2>🤖 JARVIS</h2>
+            </div>
+
+            <div id="messages" class="messages">
+
+                <div class="message jarvis">
+                    Hello. I'm Jarvis.
+                    <br><br>
+                    How can I help you?
+                </div>
+
+            </div>
+
+
+            <div class="inputArea">
+
+                <input
+                    id="userInput"
+                    type="text"
+                    placeholder="Ask Jarvis something..."
+                    onkeydown="handleEnter(event)"
+                >
+
+                <button onclick="sendMessage()">
+                    SEND
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUICK ACTIONS -->
+
+        <section class="quickActions">
+
+            <button onclick="quickMessage('What do I have scheduled?')">
+                📅 Schedule
+            </button>
+
+            <button onclick="quickMessage('How much have I spent?')">
+                💰 Finances
+            </button>
+
+            <button onclick="quickMessage('What are my tasks?')">
+                ✅ Tasks
+            </button>
+
+            <button onclick="quickMessage('Give me a summary of my day.')">
+                🧠 Daily Summary
+            </button>
+
+        </section>
+
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>
